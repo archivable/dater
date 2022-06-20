@@ -64,7 +64,7 @@ final class DatesTests: XCTestCase {
         let calendar = dates.calendar { _ in
             false
         }
-        XCTAssertEqual(today, calendar.first?.items.flatMap { $0 }.first { $0.today }?.value)
+        XCTAssertEqual(.init(today), calendar.first?.items.flatMap { $0 }.first { $0.today }?.value)
     }
     
     func testTimezones() {

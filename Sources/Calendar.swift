@@ -11,15 +11,19 @@ extension Calendar {
         - component(.day, from: .init())
     }
     
-    public func leadingWeekdays(year: Int, month: Int, day: Int) -> Int {
+    public func leadingWeekdays(year: UInt16, month: UInt8, day: UInt8) -> Int {
         {
             $0 < firstWeekday ? 7 - firstWeekday + $0 : $0 - firstWeekday
-        } (component(.weekday, from: date(from: .init(year: year, month: month, day: day))!))
+        } (component(.weekday, from: date(from: .init(year: .init(year),
+                                                      month: .init(month),
+                                                      day: .init(day)))!))
     }
     
-    public func trailingWeekdays(year: Int, month: Int, day: Int) -> Int {
+    public func trailingWeekdays(year: UInt16, month: UInt8, day: UInt8) -> Int {
         {
             $0 < firstWeekday ? firstWeekday - 1 - $0 : 6 + firstWeekday - $0
-        } (component(.weekday, from: date(from: .init(year: year, month: month, day: day))!))
+        } (component(.weekday, from: date(from: .init(year: .init(year),
+                                                      month: .init(month),
+                                                      day: .init(day)))!))
     }
 }
