@@ -10,9 +10,7 @@ extension Array where Element == Date {
                               month: month,
                               items: interval
                                 .days(year: year, month: month) { day, date in
-                                    .init(value: day,
-                                          today: Calendar.global.isDateInToday(date),
-                                          content: transform(date))
+                                    .init(value: day, content: transform(date))
                                 })
                     }
             }

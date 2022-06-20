@@ -24,47 +24,38 @@ final class DatesTests: XCTestCase {
         }
 
         XCTAssertEqual(.init(year: 2021, month: 3, items: [
-            [.init(value: 1, today: false, content: false),
-             .init(value: 2, today: false, content: false),
-             .init(value: 3, today: false, content: false),
-             .init(value: 4, today: false, content: false),
-             .init(value: 5, today: false, content: false),
-             .init(value: 6, today: false, content: false),
-             .init(value: 7, today: false, content: false)],
-            [.init(value: 8, today: false, content: false),
-             .init(value: 9, today: false, content: false),
-             .init(value: 10, today: false, content: false),
-             .init(value: 11, today: false, content: false),
-             .init(value: 12, today: false, content: false),
-             .init(value: 13, today: false, content: false),
-             .init(value: 14, today: false, content: false)],
-            [.init(value: 15, today: false, content: true),
-             .init(value: 16, today: false, content: false),
-             .init(value: 17, today: false, content: true),
-             .init(value: 18, today: false, content: true),
-             .init(value: 19, today: false, content: false),
-             .init(value: 20, today: false, content: true),
-             .init(value: 21, today: false, content: false)],
-            [.init(value: 22, today: false, content: false),
-             .init(value: 23, today: false, content: false),
-             .init(value: 24, today: false, content: false),
-             .init(value: 25, today: false, content: false),
-             .init(value: 26, today: false, content: false),
-             .init(value: 27, today: false, content: false),
-             .init(value: 28, today: false, content: false)],
-             [.init(value: 29, today: false, content: false),
-             .init(value: 30, today: false, content: false),
-             .init(value: 31, today: false, content: false)]
+            [.init(value: 1, content: false),
+             .init(value: 2, content: false),
+             .init(value: 3, content: false),
+             .init(value: 4, content: false),
+             .init(value: 5, content: false),
+             .init(value: 6, content: false),
+             .init(value: 7, content: false)],
+            [.init(value: 8, content: false),
+             .init(value: 9, content: false),
+             .init(value: 10, content: false),
+             .init(value: 11, content: false),
+             .init(value: 12, content: false),
+             .init(value: 13, content: false),
+             .init(value: 14, content: false)],
+            [.init(value: 15, content: true),
+             .init(value: 16, content: false),
+             .init(value: 17, content: true),
+             .init(value: 18, content: true),
+             .init(value: 19, content: false),
+             .init(value: 20, content: true),
+             .init(value: 21, content: false)],
+            [.init(value: 22, content: false),
+             .init(value: 23, content: false),
+             .init(value: 24, content: false),
+             .init(value: 25, content: false),
+             .init(value: 26, content: false),
+             .init(value: 27, content: false),
+             .init(value: 28, content: false)],
+             [.init(value: 29, content: false),
+             .init(value: 30, content: false),
+             .init(value: 31, content: false)]
         ]), calendar.first!)
-    }
-    
-    func testToday() {
-        let today = Calendar.global.component(.day, from: .init())
-        let dates = [Date]()
-        let calendar = dates.calendar { _ in
-            false
-        }
-        XCTAssertEqual(.init(today), calendar.first?.items.flatMap { $0 }.first { $0.today }?.value)
     }
     
     func testTimezones() {
